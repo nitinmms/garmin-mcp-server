@@ -3,6 +3,8 @@ name = "garmin-mcp-server"
 version = "0.1.0"
 description = "Read-only MCP server for your own Garmin Connect data via the Garmin Personal API"
 readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 requires-python = ">=3.11"
 dependencies = [
     "mcp>=2.3,<3",

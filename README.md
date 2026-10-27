@@ -83,3 +83,7 @@ VO2 max, personal records, and device lists.
 ```sh
 uv run pytest
 ```
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).
