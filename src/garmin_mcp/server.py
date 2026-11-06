@@ -21,6 +21,30 @@ API_KEY_ENV = "GARMIN_PERSONAL_API_KEY"
 MAX_RANGE_DAYS = 366
 MAX_SAMPLES = 48  # lists longer than this are treated as time series and omitted by default
 
+READ_ONLY_TOOL_NAMES = (
+    "search_activities",
+    "get_activity",
+    "get_activity_workouts",
+    "get_daily_summary",
+    "get_daily_summaries",
+    "get_steps",
+    "get_stress",
+    "get_heart_rate",
+    "get_body_battery",
+    "get_spo2",
+    "get_hydration",
+    "get_wellness_activities",
+    "get_sleep",
+    "get_sleep_summaries",
+    "get_hrv",
+    "get_hrv_range",
+    "get_fitness_age",
+    "get_weight",
+    "get_weight_goals",
+    "get_heart_rate_zones",
+    "get_profile_settings",
+)
+
 mcp = MCPServer(
     "garmin",
     instructions=(
@@ -263,6 +287,10 @@ def get_profile_settings() -> Any:
 def main() -> None:
     if sys.argv[1:] == ["check"]:
         _check()
+    elif sys.argv[1:] == ["http"]:
+        from .http_server import main as http_main
+
+        http_main()
     else:
         mcp.run()
 
