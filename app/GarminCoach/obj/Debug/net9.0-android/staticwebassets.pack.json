@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\mmsco\\AppData\\Local\\LitosSoftwareFactory-Installed\\workspaces\\f8b928c148754a0f9339ca4122453235\\app\\GarminCoach\\obj\\Debug\\net9.0-android\\scopedcss\\bundle\\GarminCoach.styles.css",
+      "PackagePath": "staticwebassets\\GarminCoach.styles.css"
+    },
+    {
+      "Id": "C:\\Users\\mmsco\\AppData\\Local\\LitosSoftwareFactory-Installed\\workspaces\\f8b928c148754a0f9339ca4122453235\\app\\GarminCoach\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\mmsco\\AppData\\Local\\LitosSoftwareFactory-Installed\\workspaces\\f8b928c148754a0f9339ca4122453235\\app\\GarminCoach\\wwwroot\\index.html",
+      "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\mmsco\\AppData\\Local\\LitosSoftwareFactory-Installed\\workspaces\\f8b928c148754a0f9339ca4122453235\\app\\GarminCoach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\mmsco\\AppData\\Local\\LitosSoftwareFactory-Installed\\workspaces\\f8b928c148754a0f9339ca4122453235\\app\\GarminCoach\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.GarminCoach.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.GarminCoach.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.build.GarminCoach.props",
+      "PackagePath": "build\\GarminCoach.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.buildMultiTargeting.GarminCoach.props",
+      "PackagePath": "buildMultiTargeting\\GarminCoach.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0-android\\staticwebassets\\msbuild.buildTransitive.GarminCoach.props",
+      "PackagePath": "buildTransitive\\GarminCoach.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

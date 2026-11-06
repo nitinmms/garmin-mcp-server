@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GarminCoach</name>
+    </assembly>
+    <members>
+        <member name="T:GarminCoach.Services.ILocalServer">
+            <summary>Where the app gets the local MCP server it can start for the user.</summary>
+        </member>
+        <member name="T:GarminCoach.Services.LocalGarminMcpServer">
+            <summary>Combines the app-managed server with the configured MCP client.</summary>
+        </member>
+        <member name="T:GarminCoach.Services.CoachViewModel">
+            <summary>State the Blazor views bind to. Kept alive for the life of the app.</summary>
+        </member>
+        <member name="T:GarminCoach.Services.MauiKeyValueStore">
+            <summary>Persists settings in MAUI Preferences, so they survive app restarts.</summary>
+        </member>
+        <member name="T:GarminCoach.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+    </members>
+</doc>

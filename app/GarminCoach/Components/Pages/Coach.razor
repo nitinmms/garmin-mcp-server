@@ -1,0 +1,23 @@
+@page "/coach"
+@inject CoachViewModel Vm
+
+<h2>Session</h2>
+@if (Vm.Error is not null) { <div class="alert alert-danger">@Vm.Error</div> }
+@if (Vm.Recommendation is { } s)
+{
+    <div class="card mb-3"><div class="card-body">
+        <h3>@s.WorkoutType · @s.DurationText</h3>
+        <p class="text-muted">Intensity: @s.IntensityZone</p>
+        <ol>@foreach (var st in s.Structure) { <li>@st.Description</li> }</ol>
+        <p>@s.Reasoning</p>
+        @if (s.MissingSignals.Count > 0) { <p class="text-warning">Missing: @string.Join(", ", s.MissingSignals)</p> }
+    </div></div>
+}
+@if (Vm.Signals.Chips.Count > 0)
+{
+    <h4>Your last 7 days</h4>
+    <div class="d-flex flex-wrap gap-2">
+        @foreach (var c in Vm.Signals.Chips)
+        { <div class="border rounded p-2"><div class="fw-bold">@c.Label</div><div>@c.Value</div><div class="text-muted">@c.Trend</div></div> }
+    </div>
+}

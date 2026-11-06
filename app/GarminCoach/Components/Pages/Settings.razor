@@ -1,0 +1,76 @@
+@page "/settings"
+@inject SettingsStore Store
+@inject CoachViewModel Coach
+@inject AppRuntimeInfo Runtime
+
+<h2>Settings</h2>
+<p class="text-muted">Your keys are stored only on this device. The app is read-only: it never changes your Garmin data.</p>
+
+<h4 class="mt-3">Garmin</h4>
+<label class="form-label">Personal API key</label>
+<input class="form-control" type="password" @bind="_garminKey" @bind:event="oninput"
+       placeholder="paste your Garmin personal API key" />
+<p class="form-text">Create one at garmin.com → Settings → Personal API tokens.</p>
+
+<h4 class="mt-3">Server</h4>
+<label class="form-label">MCP server address</label>
+<input class="form-control" @bind="_serverUrl" @bind:event="oninput" />
+<p class="form-text">Default @GarminMcpServer.DefaultBaseUrl works with the Android emulator reaching this machine.</p>
+
+<h4 class="mt-3">AI provider</h4>
+<select class="form-select" @bind="_provider">
+    @foreach (var p in AiSettings.Providers) { <option value="@p">@p</option> }
+</select>
+<label class="form-label mt-2">API key</label>
+<input class="form-control" type="password" @bind="_aiKey" @bind:event="oninput" />
+<label class="form-label mt-2">Model</label>
+<input class="form-control" @bind="_model" @bind:event="oninput" />
+
+<h4 class="mt-3">Age and gender (used if Garmin does not provide them)</h4>
+<div class="d-flex gap-2">
+    <input class="form-control" placeholder="age" @bind="_age" @bind:event="oninput" />
+    <select class="form-select" @bind="_gender">
+        <option value="">not set</option>
+        <option value="male">male</option>
+        <option value="female">female</option>
+    </select>
+</div>
+
+<button class="btn btn-primary mt-3" @onclick="Save">Save</button>
+@if (_saved) { <span class="text-success ms-2">Saved.</span> }
+
+<h4 class="mt-4">Embedded MCP server</h4>
+<p>Version @Runtime.Version · @(Runtime.RunsServerInProcess ? "running" : "stopped")</p>
+
+@code {
+    private string _garminKey = "";
+    private string _serverUrl = "";
+    private string _provider = AiSettings.OpenAi;
+    private string _aiKey = "";
+    private string _model = "";
+    private string _age = "";
+    private string _gender = "";
+    private bool _saved;
+
+    protected override void OnInitialized()
+    {
+        _garminKey = Store.GarminApiKey;
+        _serverUrl = Store.Get(GarminMcpServer.BaseUrlKey);
+        var ai = Store.Ai;
+        _provider = ai.Provider;
+        _aiKey = ai.ApiKey;
+        _model = ai.Model;
+        _age = Store.ManualAge;
+        _gender = Store.ManualGender;
+    }
+
+    private void Save()
+    {
+        Store.GarminApiKey = _garminKey;
+        Store.Set(GarminMcpServer.BaseUrlKey, _serverUrl);
+        Store.Ai = new AiSettings { Provider = _provider, ApiKey = _aiKey, Model = _model };
+        Store.ManualAge = _age;
+        Store.ManualGender = _gender;
+        _saved = true;
+    }
+}
