@@ -122,3 +122,6 @@ C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c14
 C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core.Tests\obj\Debug\net9.0\GarminCoach.Core.Tests.pdb
 C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core.Tests\obj\Debug\net9.0\GarminCoach.Core.Tests.genruntimeconfig.cache
 C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core.Tests\obj\Debug\net9.0\ref\GarminCoach.Core.Tests.dll
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core.Tests\bin\Debug\net9.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core.Tests\bin\Debug\net9.0\Microsoft.AspNetCore.Components.dll
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core.Tests\bin\Debug\net9.0\Microsoft.AspNetCore.Metadata.dll

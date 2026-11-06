@@ -1,9 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "v73ejLnGlms=",
+  "dgSpecHash": "XLQAFp8Q8K4=",
   "success": true,
   "projectFilePath": "C:\\Users\\mmsco\\AppData\\Local\\LitosSoftwareFactory-Installed\\workspaces\\f8b928c148754a0f9339ca4122453235\\app\\GarminCoach.Core.Tests\\GarminCoach.Core.Tests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.aspnetcore.authorization\\9.0.9\\microsoft.aspnetcore.authorization.9.0.9.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.aspnetcore.components\\9.0.9\\microsoft.aspnetcore.components.9.0.9.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.aspnetcore.components.analyzers\\9.0.9\\microsoft.aspnetcore.components.analyzers.9.0.9.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.aspnetcore.metadata\\9.0.9\\microsoft.aspnetcore.metadata.9.0.9.nupkg.sha512",
     "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.codecoverage\\17.14.1\\microsoft.codecoverage.17.14.1.nupkg.sha512",
     "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.ai\\9.9.1\\microsoft.extensions.ai.9.9.1.nupkg.sha512",
     "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.ai.abstractions\\10.8.3\\microsoft.extensions.ai.abstractions.10.8.3.nupkg.sha512",
