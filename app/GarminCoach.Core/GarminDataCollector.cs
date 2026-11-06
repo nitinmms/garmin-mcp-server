@@ -9,11 +9,11 @@ namespace GarminCoach.Core;
 /// </summary>
 public sealed class GarminDataCollector
 {
-    private readonly GarminMcpClient _client;
+    private readonly IGarminToolClient _client;
     private readonly Func<DateOnly> _today;
     private readonly Func<ProfileSnapshot> _manualProfile;
 
-    public GarminDataCollector(GarminMcpClient client, Func<DateOnly>? today = null, Func<ProfileSnapshot>? manualProfile = null)
+    public GarminDataCollector(IGarminToolClient client, Func<DateOnly>? today = null, Func<ProfileSnapshot>? manualProfile = null)
     {
         _client = client;
         _today = today ?? (() => DateOnly.FromDateTime(DateTime.UtcNow));

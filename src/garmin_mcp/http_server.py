@@ -63,6 +63,14 @@ async def _send_json(send: Any, status: int, payload: dict[str, Any]) -> None:
     await send({"type": "http.response.body", "body": body})
 
 
+def create_server_app(host_name: str | None = None, port_value: int | None = None) -> Any:
+    # Like create_app, but also records the bind host/port this server was started for.
+    from . import settings
+
+    settings.set_host_port(host_name, port_value)
+    return create_app()
+
+
 def create_app() -> Any:
     # Wrap the MCP Streamable HTTP app, adding the per-request key and /health.
     inner = mcp.streamable_http_app()

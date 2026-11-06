@@ -69,6 +69,10 @@ public sealed class SettingsStore
 
     public bool HasGarminKey => GarminApiKey.Length > 0;
 
+    public string Get(string key) => _store.Get(key) ?? "";
+
+    public void Set(string key, string value) => _store.Set(key, value ?? "");
+
     public ProfileSnapshot ManualProfile => new(
         string.IsNullOrWhiteSpace(ManualAge) ? null : ManualAge,
         GarminPayloadReader.NormalizeGender(ManualGender),

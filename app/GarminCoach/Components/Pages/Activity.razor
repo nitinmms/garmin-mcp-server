@@ -1,0 +1,29 @@
+@page "/activity"
+@inject CoachViewModel Coach
+
+<h1>Activity</h1>
+<p class="text-muted">Every Garmin MCP tool call the coach made, in order.</p>
+
+@if (Coach.Activity.Count == 0)
+{
+    <p>No tool calls yet. Ask for a session on the Coach page.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr><th>#</th><th>Tool</th><th>Arguments</th><th>What it fetched</th></tr>
+        </thead>
+        <tbody>
+            @foreach (var call in Coach.Activity)
+            {
+                <tr>
+                    <td>@call.Number</td>
+                    <td>@call.ToolName</td>
+                    <td>@call.Arguments</td>
+                    <td>@call.Summary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

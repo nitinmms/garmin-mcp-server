@@ -71,6 +71,25 @@ Tools marked † drop large intraday time series unless called with `include_sam
 Not available in the Personal API (so not offered here): training readiness, training status,
 VO2 max, personal records, and device lists.
 
+## Sample .NET MAUI app (Android)
+
+`app/GarminCoach` is a Blazor Hybrid MAUI app that embeds this MCP server and coaches you:
+it reads the last 7 days of your own Garmin data through the read-only tools, shows every
+tool call it made, asks your chosen AI model for one cycling session, and sanity-checks the
+answer. Its shared coach core ships as the `app/GarminCoach.Core` library.
+
+```sh
+uv sync                                   # Python server + its HTTP extra
+dotnet build garmin-mcp-server.slnx       # the app, its core and the .NET tests
+dotnet test app/GarminCoach.Core.Tests    # the .NET unit tests
+```
+
+In the app, open **Settings**, paste your Garmin personal API key and your OpenAI or
+Anthropic key, then tap **What should I ride today?**. The app talks to the MCP server over
+the Streamable HTTP transport (`garmin-mcp http`); on the Android emulator it reaches this
+machine at `http://10.0.2.2:8000`. Point it at another address in Settings if your server
+runs elsewhere.
+
 ## Security notes
 
 - The key is read only from the `GARMIN_PERSONAL_API_KEY` environment variable and is never logged

@@ -52,12 +52,12 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>xk1xi88bo7</Fingerprint>
-      <Integrity>QTgjFEubE0VzyLVBrm5hMiZBg9xnJ/w0/YOg6cr7NZY=</Integrity>
+      <Fingerprint>ux5fz5rxbg</Fingerprint>
+      <Integrity>0vIIeXZSUnk8TuWH/kQfZuYIIBVDH0eGyCSnoK4Cj2w=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-      <FileLength>882</FileLength>
-      <LastWriteTime>Fri, 06 Nov 2026 07:29:12 GMT</LastWriteTime>
+      <FileLength>798</FileLength>
+      <LastWriteTime>Fri, 06 Nov 2026 08:00:29 GMT</LastWriteTime>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\lib\bootstrap\dist\css\bootstrap.min.css'))">

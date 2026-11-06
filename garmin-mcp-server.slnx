@@ -1,5 +1,7 @@
 <Solution>
   <Folder Name="/app/">
+    <Project Path="app/GarminCoach.Core/GarminCoach.Core.csproj" />
+    <Project Path="app/GarminCoach.Core.Tests/GarminCoach.Core.Tests.csproj" />
     <Project Path="app/GarminCoach/GarminCoach.csproj" />
   </Folder>
 </Solution>

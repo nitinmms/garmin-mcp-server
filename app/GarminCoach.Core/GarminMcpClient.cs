@@ -10,17 +10,22 @@ namespace GarminCoach.Core;
 /// Every Garmin request the app makes goes through here - the app never calls Garmin directly.
 /// Only read-only tools are offered to the agent.
 /// </summary>
-public sealed class GarminMcpClient : IAsyncDisposable
+public sealed class GarminMcpClient : IGarminToolClient, IAsyncDisposable
 {
     private readonly GarminMcpServer _server;
     private readonly Func<string> _garminApiKey;
+    private readonly HttpClient? _httpClient;
     private McpClient? _client;
 
-    public GarminMcpClient(GarminMcpServer server, Func<string> garminApiKey)
+    public GarminMcpClient(GarminMcpServer server, Func<string> garminApiKey, HttpClient? httpClient = null)
     {
         _server = server;
         _garminApiKey = garminApiKey;
+        _httpClient = httpClient;
     }
+
+    /// <summary>The server address, safe to show to the user in an error message.</summary>
+    public string ServerUrl => _server.BaseUrl;
 
     public async Task<McpClient> ConnectAsync(CancellationToken cancellationToken = default)
     {
@@ -31,7 +36,7 @@ public sealed class GarminMcpClient : IAsyncDisposable
 
         var options = new HttpClientTransportOptions
         {
-            Endpoint = new Uri(_server.BaseUrl.TrimEnd('/') + "/"),
+            Endpoint = _server.Endpoint,
             TransportMode = HttpTransportMode.StreamableHttp,
             AdditionalHeaders = new Dictionary<string, string> { ["X-Garmin-Api-Key"] = key },
             ConnectionTimeout = TimeSpan.FromSeconds(30),
@@ -39,7 +44,10 @@ public sealed class GarminMcpClient : IAsyncDisposable
 
         try
         {
-            _client = await McpClient.CreateAsync(new HttpClientTransport(options), cancellationToken: cancellationToken);
+            var transport = _httpClient is null
+                ? new HttpClientTransport(options)
+                : new HttpClientTransport(options, _httpClient);
+            _client = await McpClient.CreateAsync(transport, cancellationToken: cancellationToken);
         }
         catch (Exception exception)
         {

@@ -1,0 +1,103 @@
+@page "/"
+@inject CoachViewModel Coach
+@inject SettingsStore Settings
+@inject AppRuntimeInfo Runtime
+
+<h1>Garmin Coach</h1>
+<p class="text-muted">A read-only session suggestion from your own Garmin data, for cycling today.</p>
+
+@if (!Settings.HasGarminKey)
+{
+    <div class="alert alert-warning">
+        Add your Garmin personal API key in <a href="settings">Settings</a> to get a session.
+    </div>
+}
+
+<div class="d-flex flex-wrap gap-2 mb-3">
+    <button class="btn btn-primary" disabled="@(_busy)" @onclick="RunAsync">What should I ride today?</button>
+    <button class="btn btn-outline-secondary" disabled="@(_busy || !Runtime.Server.IsRunning)" @onclick="ConnectAsync">Test connection</button>
+</div>
+
+@if (_busy)
+{
+    <div class="alert alert-info">Reading your last 7 days from Garmin…</div>
+}
+
+@if (!string.IsNullOrEmpty(Coach.Error))
+{
+    <div class="alert alert-danger">@Coach.Error</div>
+}
+
+@if (!string.IsNullOrEmpty(_connection))
+{
+    <div class="alert alert-secondary">@_connection</div>
+}
+
+@if (Coach.Recommendation is { } session)
+{
+    <div class="card mb-3">
+        <div class="card-body">
+            <h2 class="card-title">@session.WorkoutType · @session.DurationText</h2>
+            <p class="card-text text-muted">Intensity: @session.IntensityZone</p>
+            <ol>
+                @foreach (var step in session.Structure)
+                {
+                    <li>@step.Description</li>
+                }
+            </ol>
+            <p>@session.Reasoning</p>
+            @if (session.MissingSignals.Count > 0)
+            {
+                <p class="text-warning">Signals that were unavailable: @string.Join(", ", session.MissingSignals)</p>
+            }
+        </div>
+    </div>
+}
+
+@if (Coach.Signals.Chips.Count > 0)
+{
+    <h3>Your last 7 days</h3>
+    <div class="d-flex flex-wrap gap-2">
+        @foreach (var chip in Coach.Signals.Chips)
+        {
+            <div class="border rounded p-2">
+                <div class="fw-bold">@chip.Label</div>
+                <div>@chip.Value</div>
+                <div class="text-muted">@chip.Trend</div>
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private bool _busy;
+    private string? _connection;
+
+    private async Task RunAsync()
+    {
+        _busy = true;
+        _connection = null;
+        try
+        {
+            await Runtime.Server.StartAsync();
+            await Coach.RunAsync();
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+
+    private async Task ConnectAsync()
+    {
+        _busy = true;
+        try
+        {
+            _connection = await Coach.TestConnectionAsync();
+        }
+        finally
+        {
+            _busy = false;
+        }
+    }
+}

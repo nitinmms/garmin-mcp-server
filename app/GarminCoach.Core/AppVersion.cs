@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace GarminCoach.Core;
 
 /// <summary>Application version and User-Agent, stripped of any SourceLink build metadata.</summary>
@@ -11,7 +13,7 @@ public static class AppVersion
     {
         var assembly = typeof(AppVersion).Assembly;
         var value = assembly
-            .GetCustomAttribute<System.Reflection.AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+            .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
         if (string.IsNullOrWhiteSpace(value))
         {
             value = assembly.GetName().Version?.ToString() ?? "unknown";

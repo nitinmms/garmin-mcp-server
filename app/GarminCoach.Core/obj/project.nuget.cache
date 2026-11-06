@@ -1,0 +1,31 @@
+{
+  "version": 2,
+  "dgSpecHash": "UEdwFIEgv5w=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mmsco\\AppData\\Local\\LitosSoftwareFactory-Installed\\workspaces\\f8b928c148754a0f9339ca4122453235\\app\\GarminCoach.Core\\GarminCoach.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.ai\\9.9.1\\microsoft.extensions.ai.9.9.1.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.ai.abstractions\\10.8.3\\microsoft.extensions.ai.abstractions.10.8.3.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.ai.openai\\9.9.1-preview.1.25474.6\\microsoft.extensions.ai.openai.9.9.1-preview.1.25474.6.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\10.0.10\\microsoft.extensions.caching.abstractions.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\10.0.10\\microsoft.extensions.configuration.abstractions.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\10.0.10\\microsoft.extensions.dependencyinjection.abstractions.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.diagnostics.abstractions\\10.0.10\\microsoft.extensions.diagnostics.abstractions.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\10.0.10\\microsoft.extensions.fileproviders.abstractions.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.hosting.abstractions\\10.0.10\\microsoft.extensions.hosting.abstractions.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\10.0.10\\microsoft.extensions.logging.abstractions.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.options\\10.0.10\\microsoft.extensions.options.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\microsoft.extensions.primitives\\10.0.10\\microsoft.extensions.primitives.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\modelcontextprotocol\\2.0.0\\modelcontextprotocol.2.0.0.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\modelcontextprotocol.core\\2.0.0\\modelcontextprotocol.core.2.0.0.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\openai\\2.5.0\\openai.2.5.0.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\system.clientmodel\\1.6.1\\system.clientmodel.1.6.1.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\system.diagnostics.diagnosticsource\\10.0.10\\system.diagnostics.diagnosticsource.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\system.io.pipelines\\10.0.10\\system.io.pipelines.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\system.memory.data\\8.0.1\\system.memory.data.8.0.1.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\system.net.serversentevents\\10.0.10\\system.net.serversentevents.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\system.text.encodings.web\\10.0.10\\system.text.encodings.web.10.0.10.nupkg.sha512",
+    "C:\\Users\\mmsco\\.nuget\\packages\\system.text.json\\10.0.10\\system.text.json.10.0.10.nupkg.sha512"
+  ],
+  "logs": []
+}

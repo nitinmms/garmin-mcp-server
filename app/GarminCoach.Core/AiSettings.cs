@@ -24,11 +24,11 @@ public sealed class AiSettings
     public bool IsConfigured => !string.IsNullOrWhiteSpace(ApiKey) && !string.IsNullOrWhiteSpace(Model);
 
     public static string DefaultModel(string provider) =>
-        Provider(provider) == Anthropic ? "claude-3-5-sonnet-latest" : "gpt-4o-mini";
+        NormalizeProvider(provider) == Anthropic ? "claude-3-5-sonnet-latest" : "gpt-4o-mini";
 
     public static bool IsKnownProvider(string? provider) =>
         provider is not null && Providers.Contains(provider.Trim().ToLowerInvariant());
 
-    private static string Provider(string? provider) =>
+    private static string NormalizeProvider(string? provider) =>
         IsKnownProvider(provider) ? provider!.Trim().ToLowerInvariant() : OpenAi;
 }
