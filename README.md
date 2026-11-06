@@ -90,6 +90,20 @@ the Streamable HTTP transport (`garmin-mcp http`); on the Android emulator it re
 machine at `http://10.0.2.2:8000`. Point it at another address in Settings if your server
 runs elsewhere.
 
+### Android deploys with "not enough space"
+
+If deployment to the emulator stops with
+
+```
+ADB0010: Mono.AndroidTools.InstallFailedException: ... Requested internal only, but not enough space
+```
+
+the emulator's internal data partition is too small for a MAUI debug build, and Android's
+default is to install to internal storage only. `app/GarminCoach/GarminCoach.csproj` sets
+`AndroidInstallLocation` to `auto`, which lets the system fall back to external storage. If it
+still fails, free space in the emulator with `adb shell pm uninstall com.garmincoach.sample`,
+or recreate the AVD with a larger internal storage (Device Manager -> Wipe Data / edit disk size).
+
 ## Security notes
 
 - The key is read only from the `GARMIN_PERSONAL_API_KEY` environment variable and is never logged

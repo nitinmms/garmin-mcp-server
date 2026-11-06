@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GarminCoach.Core.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2723426a8e00ca358eb8ebac9a5c6f4501bcaa07")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+418ad2a0907b0f615f4a196e5ed7f6d122a9fb29")]
 [assembly: System.Reflection.AssemblyProductAttribute("GarminCoach.Core.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GarminCoach.Core.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

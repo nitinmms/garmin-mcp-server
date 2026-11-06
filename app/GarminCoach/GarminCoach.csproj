@@ -14,6 +14,11 @@
         <ApplicationId>com.garmincoach.sample</ApplicationId>
         <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
         <ApplicationVersion>1</ApplicationVersion>
+        <!-- Android defaults to internal-only storage. A MAUI debug build is large,
+             and on an emulator with a small data partition the Visual Studio deploy
+             then fails with "ADB0010 ... Requested internal only, but not enough
+             space". "auto" lets the system fall back to external storage. -->
+        <AndroidInstallLocation>auto</AndroidInstallLocation>
         <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">24.0</SupportedOSPlatformVersion>
     </PropertyGroup>
 
