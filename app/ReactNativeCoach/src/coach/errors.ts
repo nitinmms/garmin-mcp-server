@@ -1,5 +1,5 @@
 export const MISSING_GARMIN_KEY =
-  'Add your Garmin personal API key in Settings, then tap \\u201cWhat should I ride today?\\u201d again.';
+  'Add your Garmin personal API key in Settings, then tap \u201cWhat should I ride today?\u201d again.';
 export const MISSING_AI_KEY =
   'Add your OpenAI or Anthropic API key in Settings and pick a model before asking for a session.';
 export const TIMEOUT_MESSAGE = 'The request timed out. Check your connection and try again.';

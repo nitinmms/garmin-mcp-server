@@ -37,4 +37,26 @@ describe('buildDataPayload', () => {
     expect(payload.dailyHrv).toEqual([{ date: '2026-11-02', value: 42 }]);
     expect(payload.dailyBodyBattery).toEqual([{ date: '2026-11-02', low: 22 }]);
   });
+
+  it('does not refuse a week whose only data is Body Battery', () => {
+    const payload = JSON.parse(
+      buildDataPayload(
+        { ...emptyInputs, dailyBodyBattery: [{ date: '2026-11-02', low: 22 }] },
+        { age: null, gender: null, source: null },
+      ),
+    );
+
+    expect(payload.dailyBodyBattery).toEqual([{ date: '2026-11-02', low: 22 }]);
+  });
+
+  it('does not refuse a week whose only data is a ride', () => {
+    const payload = JSON.parse(
+      buildDataPayload(
+        { ...emptyInputs, rides: [{ date: '2026-11-02', type: 'road_biking', distanceKm: 42.3, durationMinutes: 90 }] },
+        { age: null, gender: null, source: null },
+      ),
+    );
+
+    expect(payload.rides).toEqual([{ date: '2026-11-02', type: 'road_biking', distanceKm: 42.3, durationMin: 90 }]);
+  });
 });

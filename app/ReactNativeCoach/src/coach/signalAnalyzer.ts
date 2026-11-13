@@ -52,7 +52,7 @@ export function summarize(inputs: SignalInputs): GarminSignalSummary {
     dailyHrv: sortByDate(hrv),
     rides,
     missingSignals,
-    hasAnyData: load.length > 0 || sleep.length > 0 || hrv.length > 0,
+    hasAnyData: load.length > 0 || sleep.length > 0 || hrv.length > 0 || battery.length > 0 || rides.length > 0,
   };
 }
 
