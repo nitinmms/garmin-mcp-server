@@ -1,0 +1,13 @@
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\GarminCoach.Core.csproj.AssemblyReference.cache
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\GarminCoach.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\GarminCoach.Core.AssemblyInfoInputs.cache
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\GarminCoach.Core.AssemblyInfo.cs
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\GarminCoach.Core.csproj.CoreCompileInputs.cache
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\GarminCoach.Core.sourcelink.json
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\bin\Debug\net9.0\GarminCoach.Core.deps.json
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\bin\Debug\net9.0\GarminCoach.Core.dll
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\bin\Debug\net9.0\GarminCoach.Core.pdb
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\GarminCoach.Core.dll
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\refint\GarminCoach.Core.dll
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\GarminCoach.Core.pdb
+C:\Users\mmsco\AppData\Local\LitosSoftwareFactory-Installed\workspaces\f8b928c148754a0f9339ca4122453235\app\GarminCoach.Core\obj\Debug\net9.0\ref\GarminCoach.Core.dll
