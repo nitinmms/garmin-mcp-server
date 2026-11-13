@@ -90,6 +90,21 @@ the Streamable HTTP transport (`garmin-mcp http`); on the Android emulator it re
 machine at `http://10.0.2.2:8000`. Point it at another address in Settings if your server
 runs elsewhere.
 
+## React Native Android app
+
+`app/ReactNativeCoach` is a React Native (bare CLI, TypeScript) version of the same coach for
+Android. It reads the last 7 days through the read-only tools, shows every tool call, and asks
+your chosen AI model for one cycling session. See
+[app/ReactNativeCoach/README.md](app/ReactNativeCoach/README.md) for starting the server in HTTP
+mode, running the app on an emulator, and pointing it at a server on another host.
+
+```sh
+cd app/ReactNativeCoach
+npm ci
+npm run typecheck
+npm run test:ci          # writes test-results/junit.xml and coverage/cobertura-coverage.xml
+npm run android          # with an Android emulator running
+```
 ### Android deploys with "not enough space"
 
 If deployment to the emulator stops with
