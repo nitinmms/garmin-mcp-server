@@ -192,7 +192,7 @@ function readJsonRpc(text: string): any | null {
       // Fall through to the SSE parser.
     }
   }
-  for (const line of trimmed.split(/\\r?\\n|\r?\n/)) {
+  for (const line of trimmed.split(/\r?\n/)) {
     if (!line.startsWith('data:')) {
       continue;
     }

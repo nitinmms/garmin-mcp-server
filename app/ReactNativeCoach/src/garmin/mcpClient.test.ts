@@ -179,4 +179,33 @@ describe('createGarminMcpClient', () => {
 
     expect(readOnly.map(tool => tool.name)).toEqual(['search_activities', 'get_daily_summaries']);
   });
+
+  it('keeps a data: line whole when its JSON holds an escaped newline inside a string', async () => {
+    const sseFor = (result: unknown) =>
+      ['event: message', 'data: ' + JSON.stringify(rpcResult(1, result)), '', ''].join('\r\n');
+    const fetchImpl: FetchLike = async (_url, init) => {
+      const payload = init.body ? JSON.parse(init.body) : undefined;
+      if (payload?.method === 'notifications/initialized') {
+        return { status: 202, headers: { get: () => 'text/event-stream' }, text: async () => '' };
+      }
+      let result: unknown;
+      if (payload?.method === 'tools/list') {
+        result = { tools };
+      } else if (payload?.method === 'tools/call') {
+        result = { content: [{ type: 'text', text: JSON.stringify({ note: 'first line\nsecond line' }) }] };
+      } else {
+        result = { serverInfo: { name: 'garmin' } };
+      }
+      return {
+        status: 200,
+        headers: { get: (name: string) => (name.toLowerCase() === 'content-type' ? 'text/event-stream' : null) },
+        text: async () => sseFor(result),
+      };
+    };
+
+    const client = createGarminMcpClient({ serverUrl: 'http://10.0.2.2:8000', apiKey: 'k', fetchImpl });
+    const result = await client.callTool('search_activities', {});
+
+    expect(result).toEqual({ note: 'first line\nsecond line' });
+  });
 });
