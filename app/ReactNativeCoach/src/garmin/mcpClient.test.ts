@@ -155,7 +155,28 @@ describe('createGarminMcpClient', () => {
     });
 
     const client = createGarminMcpClient({ serverUrl: 'http://10.0.2.2:8000', apiKey: 'k', fetchImpl });
-
     await expect(client.callTool('get_daily_summaries', {})).rejects.toThrow(/read-only/i);
+  });
+
+  it('parses a multi-line SSE reply that uses real CR/LF line breaks', async () => {
+    const sseFor = (result: unknown) =>
+      ['event: message', 'data: ' + JSON.stringify(rpcResult(1, result)), '', ''].join('\r\n');
+    const fetchImpl: FetchLike = async (_url, init) => {
+      const payload = init.body ? JSON.parse(init.body) : undefined;
+      if (payload?.method === 'notifications/initialized') {
+        return { status: 202, headers: { get: () => 'text/event-stream' }, text: async () => '' };
+      }
+      const result = payload?.method === 'tools/list' ? { tools } : { serverInfo: { name: 'garmin' } };
+      return {
+        status: 200,
+        headers: { get: (name: string) => (name.toLowerCase() === 'content-type' ? 'text/event-stream' : null) },
+        text: async () => sseFor(result),
+      };
+    };
+
+    const client = createGarminMcpClient({ serverUrl: 'http://10.0.2.2:8000', apiKey: 'k', fetchImpl });
+    const readOnly = await client.listReadOnlyTools();
+
+    expect(readOnly.map(tool => tool.name)).toEqual(['search_activities', 'get_daily_summaries']);
   });
 });
