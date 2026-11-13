@@ -107,3 +107,35 @@ describe('trends', () => {
     expect(trendForBattery([{ date: '2026-11-01', low: 40 }, { date: '2026-11-02', low: 60 }])).toBe('improving');
   });
 });
+
+describe('hasAnyData', () => {
+  const only = (overrides: Partial<SignalInputs>): SignalInputs => ({ ...emptyInputs, ...overrides });
+
+  it('counts a week whose only signal is training load as data', () => {
+    expect(summarize(only({ dailyLoad: [{ date: '2026-11-01', load: 200 }] })).hasAnyData).toBe(true);
+  });
+
+  it('counts a week whose only signal is sleep as data', () => {
+    expect(summarize(only({ dailySleep: [{ date: '2026-11-01', minutes: 420 }] })).hasAnyData).toBe(true);
+  });
+
+  it('counts a week whose only signal is HRV as data', () => {
+    expect(summarize(only({ dailyHrv: [{ date: '2026-11-01', value: 44 }] })).hasAnyData).toBe(true);
+  });
+
+  it('counts a week whose only signal is Body Battery as data', () => {
+    expect(summarize(only({ dailyBodyBattery: [{ date: '2026-11-01', low: 30 }] })).hasAnyData).toBe(true);
+  });
+
+  it('counts a week whose only signal is a ride as data', () => {
+    expect(
+      summarize(
+        only({ rides: [{ date: '2026-11-01', type: 'road_biking', distanceKm: 40, durationMinutes: 80 }] }),
+      ).hasAnyData,
+    ).toBe(true);
+  });
+
+  it('reports no data only when all five signals are absent', () => {
+    expect(summarize(emptyInputs).hasAnyData).toBe(false);
+  });
+});

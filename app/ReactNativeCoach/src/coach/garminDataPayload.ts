@@ -7,7 +7,8 @@ export function buildDataPayload(inputs: SignalInputs, profile: ProfileSnapshot)
     inputs.rides.length === 0 &&
     inputs.dailyLoad.length === 0 &&
     inputs.dailySleep.length === 0 &&
-    inputs.dailyHrv.length === 0
+    inputs.dailyHrv.length === 0 &&
+    inputs.dailyBodyBattery.length === 0
   ) {
     throw new CoachError(NO_DATA_MESSAGE);
   }
